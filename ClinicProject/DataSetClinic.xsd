@@ -809,6 +809,74 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Patients_viewTableAdapter" GeneratorDataComponentClassName="Patients_viewTableAdapter" Name="Patients_view" UserDataComponentName="Patients_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ClinicConnectionString (Settings)" DbObjectName="Clinic.dbo.Patients_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Imię, Nazwisko, PESEL, [Numer telefonu], Ulica, Numer, [Kod pocztowy], Miasto, Województwo FROM dbo.Patients_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Imię" DataSetColumn="Imię" />
+              <Mapping SourceColumn="Nazwisko" DataSetColumn="Nazwisko" />
+              <Mapping SourceColumn="PESEL" DataSetColumn="PESEL" />
+              <Mapping SourceColumn="Numer telefonu" DataSetColumn="Numer telefonu" />
+              <Mapping SourceColumn="Ulica" DataSetColumn="Ulica" />
+              <Mapping SourceColumn="Numer" DataSetColumn="Numer" />
+              <Mapping SourceColumn="Kod pocztowy" DataSetColumn="Kod pocztowy" />
+              <Mapping SourceColumn="Miasto" DataSetColumn="Miasto" />
+              <Mapping SourceColumn="Województwo" DataSetColumn="Województwo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Medicines_viewTableAdapter" GeneratorDataComponentClassName="Medicines_viewTableAdapter" Name="Medicines_view" UserDataComponentName="Medicines_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ClinicConnectionString (Settings)" DbObjectName="Clinic.dbo.Medicines_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nazwa, Dawkowanie, Gramatura, VisitID FROM dbo.Medicines_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nazwa" DataSetColumn="Nazwa" />
+              <Mapping SourceColumn="Dawkowanie" DataSetColumn="Dawkowanie" />
+              <Mapping SourceColumn="Gramatura" DataSetColumn="Gramatura" />
+              <Mapping SourceColumn="VisitID" DataSetColumn="VisitID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Employee_viewTableAdapter" GeneratorDataComponentClassName="Employee_viewTableAdapter" Name="Employee_view" UserDataComponentName="Employee_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ClinicConnectionString (Settings)" DbObjectName="Clinic.dbo.Employee_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Imię, Nazwisko, Ulica, Numer, [Kod pocztowy], Miasto, Województwo, [Numer telefonu], Zdjęcie, Opis FROM dbo.Employee_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Imię" DataSetColumn="Imię" />
+              <Mapping SourceColumn="Nazwisko" DataSetColumn="Nazwisko" />
+              <Mapping SourceColumn="Ulica" DataSetColumn="Ulica" />
+              <Mapping SourceColumn="Numer" DataSetColumn="Numer" />
+              <Mapping SourceColumn="Kod pocztowy" DataSetColumn="Kod pocztowy" />
+              <Mapping SourceColumn="Miasto" DataSetColumn="Miasto" />
+              <Mapping SourceColumn="Województwo" DataSetColumn="Województwo" />
+              <Mapping SourceColumn="Numer telefonu" DataSetColumn="Numer telefonu" />
+              <Mapping SourceColumn="Zdjęcie" DataSetColumn="Zdjęcie" />
+              <Mapping SourceColumn="Opis" DataSetColumn="Opis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -817,7 +885,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
   <xs:element name="DataSetClinic" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetClinic" msprop:Generator_UserDSName="DataSetClinic">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Voivodeships" msprop:Generator_TableClassName="VoivodeshipsDataTable" msprop:Generator_TableVarName="tableVoivodeships" msprop:Generator_RowChangedName="VoivodeshipsRowChanged" msprop:Generator_TablePropName="Voivodeships" msprop:Generator_RowDeletingName="VoivodeshipsRowDeleting" msprop:Generator_RowChangingName="VoivodeshipsRowChanging" msprop:Generator_RowEvHandlerName="VoivodeshipsRowChangeEventHandler" msprop:Generator_RowDeletedName="VoivodeshipsRowDeleted" msprop:Generator_RowClassName="VoivodeshipsRow" msprop:Generator_UserTableName="Voivodeships" msprop:Generator_RowEvArgName="VoivodeshipsRowChangeEvent">
+        <xs:element name="Voivodeships" msprop:Generator_TableClassName="VoivodeshipsDataTable" msprop:Generator_TableVarName="tableVoivodeships" msprop:Generator_TablePropName="Voivodeships" msprop:Generator_RowDeletingName="VoivodeshipsRowDeleting" msprop:Generator_RowChangingName="VoivodeshipsRowChanging" msprop:Generator_RowEvHandlerName="VoivodeshipsRowChangeEventHandler" msprop:Generator_RowDeletedName="VoivodeshipsRowDeleted" msprop:Generator_UserTableName="Voivodeships" msprop:Generator_RowChangedName="VoivodeshipsRowChanged" msprop:Generator_RowEvArgName="VoivodeshipsRowChangeEvent" msprop:Generator_RowClassName="VoivodeshipsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VoivodeshipID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnVoivodeshipID" msprop:Generator_ColumnPropNameInRow="VoivodeshipID" msprop:Generator_ColumnPropNameInTable="VoivodeshipIDColumn" msprop:Generator_UserColumnName="VoivodeshipID" type="xs:int" />
@@ -831,7 +899,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cities" msprop:Generator_TableClassName="CitiesDataTable" msprop:Generator_TableVarName="tableCities" msprop:Generator_RowChangedName="CitiesRowChanged" msprop:Generator_TablePropName="Cities" msprop:Generator_RowDeletingName="CitiesRowDeleting" msprop:Generator_RowChangingName="CitiesRowChanging" msprop:Generator_RowEvHandlerName="CitiesRowChangeEventHandler" msprop:Generator_RowDeletedName="CitiesRowDeleted" msprop:Generator_RowClassName="CitiesRow" msprop:Generator_UserTableName="Cities" msprop:Generator_RowEvArgName="CitiesRowChangeEvent">
+        <xs:element name="Cities" msprop:Generator_TableClassName="CitiesDataTable" msprop:Generator_TableVarName="tableCities" msprop:Generator_TablePropName="Cities" msprop:Generator_RowDeletingName="CitiesRowDeleting" msprop:Generator_RowChangingName="CitiesRowChanging" msprop:Generator_RowEvHandlerName="CitiesRowChangeEventHandler" msprop:Generator_RowDeletedName="CitiesRowDeleted" msprop:Generator_UserTableName="Cities" msprop:Generator_RowChangedName="CitiesRowChanged" msprop:Generator_RowEvArgName="CitiesRowChangeEvent" msprop:Generator_RowClassName="CitiesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CityID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCityID" msprop:Generator_ColumnPropNameInRow="CityID" msprop:Generator_ColumnPropNameInTable="CityIDColumn" msprop:Generator_UserColumnName="CityID" type="xs:int" />
@@ -846,7 +914,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ClinicEmployee" msprop:Generator_TableClassName="ClinicEmployeeDataTable" msprop:Generator_TableVarName="tableClinicEmployee" msprop:Generator_RowChangedName="ClinicEmployeeRowChanged" msprop:Generator_TablePropName="ClinicEmployee" msprop:Generator_RowDeletingName="ClinicEmployeeRowDeleting" msprop:Generator_RowChangingName="ClinicEmployeeRowChanging" msprop:Generator_RowEvHandlerName="ClinicEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="ClinicEmployeeRowDeleted" msprop:Generator_RowClassName="ClinicEmployeeRow" msprop:Generator_UserTableName="ClinicEmployee" msprop:Generator_RowEvArgName="ClinicEmployeeRowChangeEvent">
+        <xs:element name="ClinicEmployee" msprop:Generator_TableClassName="ClinicEmployeeDataTable" msprop:Generator_TableVarName="tableClinicEmployee" msprop:Generator_TablePropName="ClinicEmployee" msprop:Generator_RowDeletingName="ClinicEmployeeRowDeleting" msprop:Generator_RowChangingName="ClinicEmployeeRowChanging" msprop:Generator_RowEvHandlerName="ClinicEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="ClinicEmployeeRowDeleted" msprop:Generator_UserTableName="ClinicEmployee" msprop:Generator_RowChangedName="ClinicEmployeeRowChanged" msprop:Generator_RowEvArgName="ClinicEmployeeRowChangeEvent" msprop:Generator_RowClassName="ClinicEmployeeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EmployeeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:int" />
@@ -914,7 +982,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MedicalExaminations" msprop:Generator_TableClassName="MedicalExaminationsDataTable" msprop:Generator_TableVarName="tableMedicalExaminations" msprop:Generator_RowChangedName="MedicalExaminationsRowChanged" msprop:Generator_TablePropName="MedicalExaminations" msprop:Generator_RowDeletingName="MedicalExaminationsRowDeleting" msprop:Generator_RowChangingName="MedicalExaminationsRowChanging" msprop:Generator_RowEvHandlerName="MedicalExaminationsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalExaminationsRowDeleted" msprop:Generator_RowClassName="MedicalExaminationsRow" msprop:Generator_UserTableName="MedicalExaminations" msprop:Generator_RowEvArgName="MedicalExaminationsRowChangeEvent">
+        <xs:element name="MedicalExaminations" msprop:Generator_TableClassName="MedicalExaminationsDataTable" msprop:Generator_TableVarName="tableMedicalExaminations" msprop:Generator_TablePropName="MedicalExaminations" msprop:Generator_RowDeletingName="MedicalExaminationsRowDeleting" msprop:Generator_RowChangingName="MedicalExaminationsRowChanging" msprop:Generator_RowEvHandlerName="MedicalExaminationsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalExaminationsRowDeleted" msprop:Generator_UserTableName="MedicalExaminations" msprop:Generator_RowChangedName="MedicalExaminationsRowChanged" msprop:Generator_RowEvArgName="MedicalExaminationsRowChangeEvent" msprop:Generator_RowClassName="MedicalExaminationsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MedicalExaminationID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMedicalExaminationID" msprop:Generator_ColumnPropNameInRow="MedicalExaminationID" msprop:Generator_ColumnPropNameInTable="MedicalExaminationIDColumn" msprop:Generator_UserColumnName="MedicalExaminationID" type="xs:int" />
@@ -934,7 +1002,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MedicalServices" msprop:Generator_TableClassName="MedicalServicesDataTable" msprop:Generator_TableVarName="tableMedicalServices" msprop:Generator_RowChangedName="MedicalServicesRowChanged" msprop:Generator_TablePropName="MedicalServices" msprop:Generator_RowDeletingName="MedicalServicesRowDeleting" msprop:Generator_RowChangingName="MedicalServicesRowChanging" msprop:Generator_RowEvHandlerName="MedicalServicesRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalServicesRowDeleted" msprop:Generator_RowClassName="MedicalServicesRow" msprop:Generator_UserTableName="MedicalServices" msprop:Generator_RowEvArgName="MedicalServicesRowChangeEvent">
+        <xs:element name="MedicalServices" msprop:Generator_TableClassName="MedicalServicesDataTable" msprop:Generator_TableVarName="tableMedicalServices" msprop:Generator_TablePropName="MedicalServices" msprop:Generator_RowDeletingName="MedicalServicesRowDeleting" msprop:Generator_RowChangingName="MedicalServicesRowChanging" msprop:Generator_RowEvHandlerName="MedicalServicesRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalServicesRowDeleted" msprop:Generator_UserTableName="MedicalServices" msprop:Generator_RowChangedName="MedicalServicesRowChanged" msprop:Generator_RowEvArgName="MedicalServicesRowChangeEvent" msprop:Generator_RowClassName="MedicalServicesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MedicalServiceID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMedicalServiceID" msprop:Generator_ColumnPropNameInRow="MedicalServiceID" msprop:Generator_ColumnPropNameInTable="MedicalServiceIDColumn" msprop:Generator_UserColumnName="MedicalServiceID" type="xs:int" />
@@ -956,7 +1024,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MedicalSpecialists" msprop:Generator_TableClassName="MedicalSpecialistsDataTable" msprop:Generator_TableVarName="tableMedicalSpecialists" msprop:Generator_RowChangedName="MedicalSpecialistsRowChanged" msprop:Generator_TablePropName="MedicalSpecialists" msprop:Generator_RowDeletingName="MedicalSpecialistsRowDeleting" msprop:Generator_RowChangingName="MedicalSpecialistsRowChanging" msprop:Generator_RowEvHandlerName="MedicalSpecialistsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalSpecialistsRowDeleted" msprop:Generator_RowClassName="MedicalSpecialistsRow" msprop:Generator_UserTableName="MedicalSpecialists" msprop:Generator_RowEvArgName="MedicalSpecialistsRowChangeEvent">
+        <xs:element name="MedicalSpecialists" msprop:Generator_TableClassName="MedicalSpecialistsDataTable" msprop:Generator_TableVarName="tableMedicalSpecialists" msprop:Generator_TablePropName="MedicalSpecialists" msprop:Generator_RowDeletingName="MedicalSpecialistsRowDeleting" msprop:Generator_RowChangingName="MedicalSpecialistsRowChanging" msprop:Generator_RowEvHandlerName="MedicalSpecialistsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalSpecialistsRowDeleted" msprop:Generator_UserTableName="MedicalSpecialists" msprop:Generator_RowChangedName="MedicalSpecialistsRowChanged" msprop:Generator_RowEvArgName="MedicalSpecialistsRowChangeEvent" msprop:Generator_RowClassName="MedicalSpecialistsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MedicalSpecialistID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMedicalSpecialistID" msprop:Generator_ColumnPropNameInRow="MedicalSpecialistID" msprop:Generator_ColumnPropNameInTable="MedicalSpecialistIDColumn" msprop:Generator_UserColumnName="MedicalSpecialistID" type="xs:int" />
@@ -965,7 +1033,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MedicalSpecializations" msprop:Generator_TableClassName="MedicalSpecializationsDataTable" msprop:Generator_TableVarName="tableMedicalSpecializations" msprop:Generator_RowChangedName="MedicalSpecializationsRowChanged" msprop:Generator_TablePropName="MedicalSpecializations" msprop:Generator_RowDeletingName="MedicalSpecializationsRowDeleting" msprop:Generator_RowChangingName="MedicalSpecializationsRowChanging" msprop:Generator_RowEvHandlerName="MedicalSpecializationsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalSpecializationsRowDeleted" msprop:Generator_RowClassName="MedicalSpecializationsRow" msprop:Generator_UserTableName="MedicalSpecializations" msprop:Generator_RowEvArgName="MedicalSpecializationsRowChangeEvent">
+        <xs:element name="MedicalSpecializations" msprop:Generator_TableClassName="MedicalSpecializationsDataTable" msprop:Generator_TableVarName="tableMedicalSpecializations" msprop:Generator_TablePropName="MedicalSpecializations" msprop:Generator_RowDeletingName="MedicalSpecializationsRowDeleting" msprop:Generator_RowChangingName="MedicalSpecializationsRowChanging" msprop:Generator_RowEvHandlerName="MedicalSpecializationsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalSpecializationsRowDeleted" msprop:Generator_UserTableName="MedicalSpecializations" msprop:Generator_RowChangedName="MedicalSpecializationsRowChanged" msprop:Generator_RowEvArgName="MedicalSpecializationsRowChangeEvent" msprop:Generator_RowClassName="MedicalSpecializationsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MedicalSpecializationID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMedicalSpecializationID" msprop:Generator_ColumnPropNameInRow="MedicalSpecializationID" msprop:Generator_ColumnPropNameInTable="MedicalSpecializationIDColumn" msprop:Generator_UserColumnName="MedicalSpecializationID" type="xs:int" />
@@ -979,7 +1047,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Medicines" msprop:Generator_TableClassName="MedicinesDataTable" msprop:Generator_TableVarName="tableMedicines" msprop:Generator_RowChangedName="MedicinesRowChanged" msprop:Generator_TablePropName="Medicines" msprop:Generator_RowDeletingName="MedicinesRowDeleting" msprop:Generator_RowChangingName="MedicinesRowChanging" msprop:Generator_RowEvHandlerName="MedicinesRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicinesRowDeleted" msprop:Generator_RowClassName="MedicinesRow" msprop:Generator_UserTableName="Medicines" msprop:Generator_RowEvArgName="MedicinesRowChangeEvent">
+        <xs:element name="Medicines" msprop:Generator_TableClassName="MedicinesDataTable" msprop:Generator_TableVarName="tableMedicines" msprop:Generator_TablePropName="Medicines" msprop:Generator_RowDeletingName="MedicinesRowDeleting" msprop:Generator_RowChangingName="MedicinesRowChanging" msprop:Generator_RowEvHandlerName="MedicinesRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicinesRowDeleted" msprop:Generator_UserTableName="Medicines" msprop:Generator_RowChangedName="MedicinesRowChanged" msprop:Generator_RowEvArgName="MedicinesRowChangeEvent" msprop:Generator_RowClassName="MedicinesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MedicineID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMedicineID" msprop:Generator_ColumnPropNameInRow="MedicineID" msprop:Generator_ColumnPropNameInTable="MedicineIDColumn" msprop:Generator_UserColumnName="MedicineID" type="xs:int" />
@@ -1000,7 +1068,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Patients" msprop:Generator_TableClassName="PatientsDataTable" msprop:Generator_TableVarName="tablePatients" msprop:Generator_RowChangedName="PatientsRowChanged" msprop:Generator_TablePropName="Patients" msprop:Generator_RowDeletingName="PatientsRowDeleting" msprop:Generator_RowChangingName="PatientsRowChanging" msprop:Generator_RowEvHandlerName="PatientsRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientsRowDeleted" msprop:Generator_RowClassName="PatientsRow" msprop:Generator_UserTableName="Patients" msprop:Generator_RowEvArgName="PatientsRowChangeEvent">
+        <xs:element name="Patients" msprop:Generator_TableClassName="PatientsDataTable" msprop:Generator_TableVarName="tablePatients" msprop:Generator_TablePropName="Patients" msprop:Generator_RowDeletingName="PatientsRowDeleting" msprop:Generator_RowChangingName="PatientsRowChanging" msprop:Generator_RowEvHandlerName="PatientsRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientsRowDeleted" msprop:Generator_UserTableName="Patients" msprop:Generator_RowChangedName="PatientsRowChanged" msprop:Generator_RowEvArgName="PatientsRowChangeEvent" msprop:Generator_RowClassName="PatientsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PatientID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPatientID" msprop:Generator_ColumnPropNameInRow="PatientID" msprop:Generator_ColumnPropNameInTable="PatientIDColumn" msprop:Generator_UserColumnName="PatientID" type="xs:int" />
@@ -1067,7 +1135,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PrescribedMedicines" msprop:Generator_TableClassName="PrescribedMedicinesDataTable" msprop:Generator_TableVarName="tablePrescribedMedicines" msprop:Generator_RowChangedName="PrescribedMedicinesRowChanged" msprop:Generator_TablePropName="PrescribedMedicines" msprop:Generator_RowDeletingName="PrescribedMedicinesRowDeleting" msprop:Generator_RowChangingName="PrescribedMedicinesRowChanging" msprop:Generator_RowEvHandlerName="PrescribedMedicinesRowChangeEventHandler" msprop:Generator_RowDeletedName="PrescribedMedicinesRowDeleted" msprop:Generator_RowClassName="PrescribedMedicinesRow" msprop:Generator_UserTableName="PrescribedMedicines" msprop:Generator_RowEvArgName="PrescribedMedicinesRowChangeEvent">
+        <xs:element name="PrescribedMedicines" msprop:Generator_TableClassName="PrescribedMedicinesDataTable" msprop:Generator_TableVarName="tablePrescribedMedicines" msprop:Generator_TablePropName="PrescribedMedicines" msprop:Generator_RowDeletingName="PrescribedMedicinesRowDeleting" msprop:Generator_RowChangingName="PrescribedMedicinesRowChanging" msprop:Generator_RowEvHandlerName="PrescribedMedicinesRowChangeEventHandler" msprop:Generator_RowDeletedName="PrescribedMedicinesRowDeleted" msprop:Generator_UserTableName="PrescribedMedicines" msprop:Generator_RowChangedName="PrescribedMedicinesRowChanged" msprop:Generator_RowEvArgName="PrescribedMedicinesRowChangeEvent" msprop:Generator_RowClassName="PrescribedMedicinesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PrescribedMedicineID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPrescribedMedicineID" msprop:Generator_ColumnPropNameInRow="PrescribedMedicineID" msprop:Generator_ColumnPropNameInTable="PrescribedMedicineIDColumn" msprop:Generator_UserColumnName="PrescribedMedicineID" type="xs:int" />
@@ -1083,7 +1151,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserGroups" msprop:Generator_TableClassName="UserGroupsDataTable" msprop:Generator_TableVarName="tableUserGroups" msprop:Generator_RowChangedName="UserGroupsRowChanged" msprop:Generator_TablePropName="UserGroups" msprop:Generator_RowDeletingName="UserGroupsRowDeleting" msprop:Generator_RowChangingName="UserGroupsRowChanging" msprop:Generator_RowEvHandlerName="UserGroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="UserGroupsRowDeleted" msprop:Generator_RowClassName="UserGroupsRow" msprop:Generator_UserTableName="UserGroups" msprop:Generator_RowEvArgName="UserGroupsRowChangeEvent">
+        <xs:element name="UserGroups" msprop:Generator_TableClassName="UserGroupsDataTable" msprop:Generator_TableVarName="tableUserGroups" msprop:Generator_TablePropName="UserGroups" msprop:Generator_RowDeletingName="UserGroupsRowDeleting" msprop:Generator_RowChangingName="UserGroupsRowChanging" msprop:Generator_RowEvHandlerName="UserGroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="UserGroupsRowDeleted" msprop:Generator_UserTableName="UserGroups" msprop:Generator_RowChangedName="UserGroupsRowChanged" msprop:Generator_RowEvArgName="UserGroupsRowChangeEvent" msprop:Generator_RowClassName="UserGroupsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserGroupID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserGroupID" msprop:Generator_ColumnPropNameInRow="UserGroupID" msprop:Generator_ColumnPropNameInTable="UserGroupIDColumn" msprop:Generator_UserColumnName="UserGroupID" type="xs:int" />
@@ -1097,7 +1165,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Visits" msprop:Generator_TableClassName="VisitsDataTable" msprop:Generator_TableVarName="tableVisits" msprop:Generator_RowChangedName="VisitsRowChanged" msprop:Generator_TablePropName="Visits" msprop:Generator_RowDeletingName="VisitsRowDeleting" msprop:Generator_RowChangingName="VisitsRowChanging" msprop:Generator_RowEvHandlerName="VisitsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitsRowDeleted" msprop:Generator_RowClassName="VisitsRow" msprop:Generator_UserTableName="Visits" msprop:Generator_RowEvArgName="VisitsRowChangeEvent">
+        <xs:element name="Visits" msprop:Generator_TableClassName="VisitsDataTable" msprop:Generator_TableVarName="tableVisits" msprop:Generator_TablePropName="Visits" msprop:Generator_RowDeletingName="VisitsRowDeleting" msprop:Generator_RowChangingName="VisitsRowChanging" msprop:Generator_RowEvHandlerName="VisitsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitsRowDeleted" msprop:Generator_UserTableName="Visits" msprop:Generator_RowChangedName="VisitsRowChanged" msprop:Generator_RowEvArgName="VisitsRowChangeEvent" msprop:Generator_RowClassName="VisitsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VisitID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnVisitID" msprop:Generator_ColumnPropNameInRow="VisitID" msprop:Generator_ColumnPropNameInTable="VisitIDColumn" msprop:Generator_UserColumnName="VisitID" type="xs:int" />
@@ -1121,7 +1189,7 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="View_Patient" msprop:Generator_TableClassName="View_PatientDataTable" msprop:Generator_TableVarName="tableView_Patient" msprop:Generator_TablePropName="View_Patient" msprop:Generator_RowDeletingName="View_PatientRowDeleting" msprop:Generator_RowChangingName="View_PatientRowChanging" msprop:Generator_RowEvHandlerName="View_PatientRowChangeEventHandler" msprop:Generator_RowDeletedName="View_PatientRowDeleted" msprop:Generator_UserTableName="View_Patient" msprop:Generator_RowChangedName="View_PatientRowChanged" msprop:Generator_RowEvArgName="View_PatientRowChangeEvent" msprop:Generator_RowClassName="View_PatientRow">
+        <xs:element name="View_Patient" msprop:Generator_TableClassName="View_PatientDataTable" msprop:Generator_TableVarName="tableView_Patient" msprop:Generator_RowChangedName="View_PatientRowChanged" msprop:Generator_TablePropName="View_Patient" msprop:Generator_RowDeletingName="View_PatientRowDeleting" msprop:Generator_RowChangingName="View_PatientRowChanging" msprop:Generator_RowEvHandlerName="View_PatientRowChangeEventHandler" msprop:Generator_RowDeletedName="View_PatientRowDeleted" msprop:Generator_RowClassName="View_PatientRow" msprop:Generator_UserTableName="View_Patient" msprop:Generator_RowEvArgName="View_PatientRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
@@ -1184,6 +1252,161 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Patients_view" msprop:Generator_TableClassName="Patients_viewDataTable" msprop:Generator_TableVarName="tablePatients_view" msprop:Generator_TablePropName="Patients_view" msprop:Generator_RowDeletingName="Patients_viewRowDeleting" msprop:Generator_RowChangingName="Patients_viewRowChanging" msprop:Generator_RowEvHandlerName="Patients_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="Patients_viewRowDeleted" msprop:Generator_UserTableName="Patients_view" msprop:Generator_RowChangedName="Patients_viewRowChanged" msprop:Generator_RowEvArgName="Patients_viewRowChangeEvent" msprop:Generator_RowClassName="Patients_viewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imię" msprop:Generator_ColumnVarNameInTable="columnImię" msprop:Generator_ColumnPropNameInRow="Imię" msprop:Generator_ColumnPropNameInTable="ImięColumn" msprop:Generator_UserColumnName="Imię">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko" msprop:Generator_ColumnVarNameInTable="columnNazwisko" msprop:Generator_ColumnPropNameInRow="Nazwisko" msprop:Generator_ColumnPropNameInTable="NazwiskoColumn" msprop:Generator_UserColumnName="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PESEL" msprop:Generator_ColumnVarNameInTable="columnPESEL" msprop:Generator_ColumnPropNameInRow="PESEL" msprop:Generator_ColumnPropNameInTable="PESELColumn" msprop:Generator_UserColumnName="PESEL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer_x0020_telefonu" msprop:Generator_ColumnVarNameInTable="columnNumer_telefonu" msprop:Generator_ColumnPropNameInRow="Numer_telefonu" msprop:Generator_ColumnPropNameInTable="Numer_telefonuColumn" msprop:Generator_UserColumnName="Numer telefonu" type="xs:int" />
+              <xs:element name="Ulica" msprop:Generator_ColumnVarNameInTable="columnUlica" msprop:Generator_ColumnPropNameInRow="Ulica" msprop:Generator_ColumnPropNameInTable="UlicaColumn" msprop:Generator_UserColumnName="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer" msprop:Generator_ColumnVarNameInTable="columnNumer" msprop:Generator_ColumnPropNameInRow="Numer" msprop:Generator_ColumnPropNameInTable="NumerColumn" msprop:Generator_UserColumnName="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kod_x0020_pocztowy" msprop:Generator_ColumnVarNameInTable="columnKod_pocztowy" msprop:Generator_ColumnPropNameInRow="Kod_pocztowy" msprop:Generator_ColumnPropNameInTable="Kod_pocztowyColumn" msprop:Generator_UserColumnName="Kod pocztowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Województwo" msprop:Generator_ColumnVarNameInTable="columnWojewództwo" msprop:Generator_ColumnPropNameInRow="Województwo" msprop:Generator_ColumnPropNameInTable="WojewództwoColumn" msprop:Generator_UserColumnName="Województwo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Medicines_view" msprop:Generator_TableClassName="Medicines_viewDataTable" msprop:Generator_TableVarName="tableMedicines_view" msprop:Generator_TablePropName="Medicines_view" msprop:Generator_RowDeletingName="Medicines_viewRowDeleting" msprop:Generator_RowChangingName="Medicines_viewRowChanging" msprop:Generator_RowEvHandlerName="Medicines_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="Medicines_viewRowDeleted" msprop:Generator_UserTableName="Medicines_view" msprop:Generator_RowChangedName="Medicines_viewRowChanged" msprop:Generator_RowEvArgName="Medicines_viewRowChangeEvent" msprop:Generator_RowClassName="Medicines_viewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nazwa" msprop:Generator_ColumnVarNameInTable="columnNazwa" msprop:Generator_ColumnPropNameInRow="Nazwa" msprop:Generator_ColumnPropNameInTable="NazwaColumn" msprop:Generator_UserColumnName="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dawkowanie" msprop:Generator_ColumnVarNameInTable="columnDawkowanie" msprop:Generator_ColumnPropNameInRow="Dawkowanie" msprop:Generator_ColumnPropNameInTable="DawkowanieColumn" msprop:Generator_UserColumnName="Dawkowanie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gramatura" msprop:Generator_ColumnVarNameInTable="columnGramatura" msprop:Generator_ColumnPropNameInRow="Gramatura" msprop:Generator_ColumnPropNameInTable="GramaturaColumn" msprop:Generator_UserColumnName="Gramatura">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VisitID" msprop:Generator_ColumnVarNameInTable="columnVisitID" msprop:Generator_ColumnPropNameInRow="VisitID" msprop:Generator_ColumnPropNameInTable="VisitIDColumn" msprop:Generator_UserColumnName="VisitID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Employee_view" msprop:Generator_TableClassName="Employee_viewDataTable" msprop:Generator_TableVarName="tableEmployee_view" msprop:Generator_RowChangedName="Employee_viewRowChanged" msprop:Generator_TablePropName="Employee_view" msprop:Generator_RowDeletingName="Employee_viewRowDeleting" msprop:Generator_RowChangingName="Employee_viewRowChanging" msprop:Generator_RowEvHandlerName="Employee_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="Employee_viewRowDeleted" msprop:Generator_RowClassName="Employee_viewRow" msprop:Generator_UserTableName="Employee_view" msprop:Generator_RowEvArgName="Employee_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imię" msprop:Generator_ColumnVarNameInTable="columnImię" msprop:Generator_ColumnPropNameInRow="Imię" msprop:Generator_ColumnPropNameInTable="ImięColumn" msprop:Generator_UserColumnName="Imię">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko" msprop:Generator_ColumnVarNameInTable="columnNazwisko" msprop:Generator_ColumnPropNameInRow="Nazwisko" msprop:Generator_ColumnPropNameInTable="NazwiskoColumn" msprop:Generator_UserColumnName="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ulica" msprop:Generator_ColumnVarNameInTable="columnUlica" msprop:Generator_ColumnPropNameInRow="Ulica" msprop:Generator_ColumnPropNameInTable="UlicaColumn" msprop:Generator_UserColumnName="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer" msprop:Generator_ColumnVarNameInTable="columnNumer" msprop:Generator_ColumnPropNameInRow="Numer" msprop:Generator_ColumnPropNameInTable="NumerColumn" msprop:Generator_UserColumnName="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kod_x0020_pocztowy" msprop:Generator_ColumnVarNameInTable="columnKod_pocztowy" msprop:Generator_ColumnPropNameInRow="Kod_pocztowy" msprop:Generator_ColumnPropNameInTable="Kod_pocztowyColumn" msprop:Generator_UserColumnName="Kod pocztowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Województwo" msprop:Generator_ColumnVarNameInTable="columnWojewództwo" msprop:Generator_ColumnPropNameInRow="Województwo" msprop:Generator_ColumnPropNameInTable="WojewództwoColumn" msprop:Generator_UserColumnName="Województwo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer_x0020_telefonu" msprop:Generator_ColumnVarNameInTable="columnNumer_telefonu" msprop:Generator_ColumnPropNameInRow="Numer_telefonu" msprop:Generator_ColumnPropNameInTable="Numer_telefonuColumn" msprop:Generator_UserColumnName="Numer telefonu" type="xs:int" />
+              <xs:element name="Zdjęcie" msprop:Generator_ColumnVarNameInTable="columnZdjęcie" msprop:Generator_ColumnPropNameInRow="Zdjęcie" msprop:Generator_ColumnPropNameInTable="ZdjęcieColumn" msprop:Generator_UserColumnName="Zdjęcie" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Opis" msprop:Generator_ColumnVarNameInTable="columnOpis" msprop:Generator_ColumnPropNameInRow="Opis" msprop:Generator_ColumnPropNameInTable="OpisColumn" msprop:Generator_UserColumnName="Opis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1237,20 +1460,20 @@ SELECT VisitID, PatientID, MedicalSpecialistID, DiseaseClassification, VisitDesc
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_C_Voivodeship" msdata:parent="Voivodeships" msdata:child="Cities" msdata:parentkey="VoivodeshipID" msdata:childkey="VoivodeshipID" msprop:Generator_UserChildTable="Cities" msprop:Generator_ChildPropName="GetCitiesRows" msprop:Generator_UserRelationName="FK_C_Voivodeship" msprop:Generator_RelationVarName="relationFK_C_Voivodeship" msprop:Generator_UserParentTable="Voivodeships" msprop:Generator_ParentPropName="VoivodeshipsRow" />
-      <msdata:Relationship name="FK_E_City" msdata:parent="Cities" msdata:child="ClinicEmployee" msdata:parentkey="CityID" msdata:childkey="CityID" msprop:Generator_UserChildTable="ClinicEmployee" msprop:Generator_ChildPropName="GetClinicEmployeeRows" msprop:Generator_UserRelationName="FK_E_City" msprop:Generator_RelationVarName="relationFK_E_City" msprop:Generator_UserParentTable="Cities" msprop:Generator_ParentPropName="CitiesRow" />
-      <msdata:Relationship name="FK_E_Group" msdata:parent="UserGroups" msdata:child="ClinicEmployee" msdata:parentkey="UserGroupID" msdata:childkey="UserGroupID" msprop:Generator_UserChildTable="ClinicEmployee" msprop:Generator_ChildPropName="GetClinicEmployeeRows" msprop:Generator_UserRelationName="FK_E_Group" msprop:Generator_ParentPropName="UserGroupsRow" msprop:Generator_RelationVarName="relationFK_E_Group" msprop:Generator_UserParentTable="UserGroups" />
-      <msdata:Relationship name="FK_CT_ClinicEmployee" msdata:parent="ClinicEmployee" msdata:child="MedicalExaminations" msdata:parentkey="EmployeeID" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="MedicalExaminations" msprop:Generator_ChildPropName="GetMedicalExaminationsRows" msprop:Generator_UserRelationName="FK_CT_ClinicEmployee" msprop:Generator_RelationVarName="relationFK_CT_ClinicEmployee" msprop:Generator_UserParentTable="ClinicEmployee" msprop:Generator_ParentPropName="ClinicEmployeeRow" />
-      <msdata:Relationship name="FK_CT_Patient" msdata:parent="Patients" msdata:child="MedicalExaminations" msdata:parentkey="PatientID" msdata:childkey="PatientID" msprop:Generator_UserChildTable="MedicalExaminations" msprop:Generator_ChildPropName="GetMedicalExaminationsRows" msprop:Generator_UserRelationName="FK_CT_Patient" msprop:Generator_ParentPropName="PatientsRow" msprop:Generator_RelationVarName="relationFK_CT_Patient" msprop:Generator_UserParentTable="Patients" />
-      <msdata:Relationship name="FK_CT_Service" msdata:parent="MedicalServices" msdata:child="MedicalExaminations" msdata:parentkey="MedicalServiceID" msdata:childkey="MedicalServiceID" msprop:Generator_UserChildTable="MedicalExaminations" msprop:Generator_ChildPropName="GetMedicalExaminationsRows" msprop:Generator_UserRelationName="FK_CT_Service" msprop:Generator_ParentPropName="MedicalServicesRow" msprop:Generator_RelationVarName="relationFK_CT_Service" msprop:Generator_UserParentTable="MedicalServices" />
-      <msdata:Relationship name="FK_MS_ClinicEmployee" msdata:parent="ClinicEmployee" msdata:child="MedicalSpecialists" msdata:parentkey="EmployeeID" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="MedicalSpecialists" msprop:Generator_ChildPropName="GetMedicalSpecialistsRows" msprop:Generator_UserRelationName="FK_MS_ClinicEmployee" msprop:Generator_RelationVarName="relationFK_MS_ClinicEmployee" msprop:Generator_UserParentTable="ClinicEmployee" msprop:Generator_ParentPropName="ClinicEmployeeRow" />
-      <msdata:Relationship name="FK_MS_Specialization" msdata:parent="MedicalSpecializations" msdata:child="MedicalSpecialists" msdata:parentkey="MedicalSpecializationID" msdata:childkey="MedicalSpecializationID" msprop:Generator_UserChildTable="MedicalSpecialists" msprop:Generator_ChildPropName="GetMedicalSpecialistsRows" msprop:Generator_UserRelationName="FK_MS_Specialization" msprop:Generator_ParentPropName="MedicalSpecializationsRow" msprop:Generator_RelationVarName="relationFK_MS_Specialization" msprop:Generator_UserParentTable="MedicalSpecializations" />
-      <msdata:Relationship name="FK_P_City" msdata:parent="Cities" msdata:child="Patients" msdata:parentkey="CityID" msdata:childkey="CityID" msprop:Generator_UserChildTable="Patients" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_P_City" msprop:Generator_RelationVarName="relationFK_P_City" msprop:Generator_UserParentTable="Cities" msprop:Generator_ParentPropName="CitiesRow" />
-      <msdata:Relationship name="FK_P_Group" msdata:parent="UserGroups" msdata:child="Patients" msdata:parentkey="UserGroupID" msdata:childkey="UserGroupID" msprop:Generator_UserChildTable="Patients" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_P_Group" msprop:Generator_ParentPropName="UserGroupsRow" msprop:Generator_RelationVarName="relationFK_P_Group" msprop:Generator_UserParentTable="UserGroups" />
-      <msdata:Relationship name="FK_PM_Medicine" msdata:parent="Medicines" msdata:child="PrescribedMedicines" msdata:parentkey="MedicineID" msdata:childkey="MedicineID" msprop:Generator_UserChildTable="PrescribedMedicines" msprop:Generator_ChildPropName="GetPrescribedMedicinesRows" msprop:Generator_UserRelationName="FK_PM_Medicine" msprop:Generator_RelationVarName="relationFK_PM_Medicine" msprop:Generator_UserParentTable="Medicines" msprop:Generator_ParentPropName="MedicinesRow" />
-      <msdata:Relationship name="FK_PM_Visit" msdata:parent="Visits" msdata:child="PrescribedMedicines" msdata:parentkey="VisitID" msdata:childkey="VisitID" msprop:Generator_UserChildTable="PrescribedMedicines" msprop:Generator_ChildPropName="GetPrescribedMedicinesRows" msprop:Generator_UserRelationName="FK_PM_Visit" msprop:Generator_ParentPropName="VisitsRow" msprop:Generator_RelationVarName="relationFK_PM_Visit" msprop:Generator_UserParentTable="Visits" />
-      <msdata:Relationship name="FK_PC_MedicalSpecialist" msdata:parent="MedicalSpecialists" msdata:child="Visits" msdata:parentkey="MedicalSpecialistID" msdata:childkey="MedicalSpecialistID" msprop:Generator_UserChildTable="Visits" msprop:Generator_ChildPropName="GetVisitsRows" msprop:Generator_UserRelationName="FK_PC_MedicalSpecialist" msprop:Generator_RelationVarName="relationFK_PC_MedicalSpecialist" msprop:Generator_UserParentTable="MedicalSpecialists" msprop:Generator_ParentPropName="MedicalSpecialistsRow" />
-      <msdata:Relationship name="FK_PC_Patient" msdata:parent="Patients" msdata:child="Visits" msdata:parentkey="PatientID" msdata:childkey="PatientID" msprop:Generator_UserChildTable="Visits" msprop:Generator_ChildPropName="GetVisitsRows" msprop:Generator_UserRelationName="FK_PC_Patient" msprop:Generator_RelationVarName="relationFK_PC_Patient" msprop:Generator_UserParentTable="Patients" msprop:Generator_ParentPropName="PatientsRow" />
+      <msdata:Relationship name="FK_PC_Patient" msdata:parent="Patients" msdata:child="Visits" msdata:parentkey="PatientID" msdata:childkey="PatientID" msprop:Generator_UserChildTable="Visits" msprop:Generator_ChildPropName="GetVisitsRows" msprop:Generator_UserRelationName="FK_PC_Patient" msprop:Generator_ParentPropName="PatientsRow" msprop:Generator_RelationVarName="relationFK_PC_Patient" msprop:Generator_UserParentTable="Patients" />
+      <msdata:Relationship name="FK_PC_MedicalSpecialist" msdata:parent="MedicalSpecialists" msdata:child="Visits" msdata:parentkey="MedicalSpecialistID" msdata:childkey="MedicalSpecialistID" msprop:Generator_UserChildTable="Visits" msprop:Generator_ChildPropName="GetVisitsRows" msprop:Generator_UserRelationName="FK_PC_MedicalSpecialist" msprop:Generator_ParentPropName="MedicalSpecialistsRow" msprop:Generator_RelationVarName="relationFK_PC_MedicalSpecialist" msprop:Generator_UserParentTable="MedicalSpecialists" />
+      <msdata:Relationship name="FK_PM_Visit" msdata:parent="Visits" msdata:child="PrescribedMedicines" msdata:parentkey="VisitID" msdata:childkey="VisitID" msprop:Generator_UserChildTable="PrescribedMedicines" msprop:Generator_ChildPropName="GetPrescribedMedicinesRows" msprop:Generator_UserRelationName="FK_PM_Visit" msprop:Generator_RelationVarName="relationFK_PM_Visit" msprop:Generator_UserParentTable="Visits" msprop:Generator_ParentPropName="VisitsRow" />
+      <msdata:Relationship name="FK_PM_Medicine" msdata:parent="Medicines" msdata:child="PrescribedMedicines" msdata:parentkey="MedicineID" msdata:childkey="MedicineID" msprop:Generator_UserChildTable="PrescribedMedicines" msprop:Generator_ChildPropName="GetPrescribedMedicinesRows" msprop:Generator_UserRelationName="FK_PM_Medicine" msprop:Generator_ParentPropName="MedicinesRow" msprop:Generator_RelationVarName="relationFK_PM_Medicine" msprop:Generator_UserParentTable="Medicines" />
+      <msdata:Relationship name="FK_MS_Specialization" msdata:parent="MedicalSpecializations" msdata:child="MedicalSpecialists" msdata:parentkey="MedicalSpecializationID" msdata:childkey="MedicalSpecializationID" msprop:Generator_UserChildTable="MedicalSpecialists" msprop:Generator_ChildPropName="GetMedicalSpecialistsRows" msprop:Generator_UserRelationName="FK_MS_Specialization" msprop:Generator_RelationVarName="relationFK_MS_Specialization" msprop:Generator_UserParentTable="MedicalSpecializations" msprop:Generator_ParentPropName="MedicalSpecializationsRow" />
+      <msdata:Relationship name="FK_MS_ClinicEmployee" msdata:parent="ClinicEmployee" msdata:child="MedicalSpecialists" msdata:parentkey="EmployeeID" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="MedicalSpecialists" msprop:Generator_ChildPropName="GetMedicalSpecialistsRows" msprop:Generator_UserRelationName="FK_MS_ClinicEmployee" msprop:Generator_ParentPropName="ClinicEmployeeRow" msprop:Generator_RelationVarName="relationFK_MS_ClinicEmployee" msprop:Generator_UserParentTable="ClinicEmployee" />
+      <msdata:Relationship name="FK_P_Group" msdata:parent="UserGroups" msdata:child="Patients" msdata:parentkey="UserGroupID" msdata:childkey="UserGroupID" msprop:Generator_UserChildTable="Patients" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_P_Group" msprop:Generator_RelationVarName="relationFK_P_Group" msprop:Generator_UserParentTable="UserGroups" msprop:Generator_ParentPropName="UserGroupsRow" />
+      <msdata:Relationship name="FK_P_City" msdata:parent="Cities" msdata:child="Patients" msdata:parentkey="CityID" msdata:childkey="CityID" msprop:Generator_UserChildTable="Patients" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_P_City" msprop:Generator_ParentPropName="CitiesRow" msprop:Generator_RelationVarName="relationFK_P_City" msprop:Generator_UserParentTable="Cities" />
+      <msdata:Relationship name="FK_CT_Service" msdata:parent="MedicalServices" msdata:child="MedicalExaminations" msdata:parentkey="MedicalServiceID" msdata:childkey="MedicalServiceID" msprop:Generator_UserChildTable="MedicalExaminations" msprop:Generator_ChildPropName="GetMedicalExaminationsRows" msprop:Generator_UserRelationName="FK_CT_Service" msprop:Generator_RelationVarName="relationFK_CT_Service" msprop:Generator_UserParentTable="MedicalServices" msprop:Generator_ParentPropName="MedicalServicesRow" />
+      <msdata:Relationship name="FK_CT_Patient" msdata:parent="Patients" msdata:child="MedicalExaminations" msdata:parentkey="PatientID" msdata:childkey="PatientID" msprop:Generator_UserChildTable="MedicalExaminations" msprop:Generator_ChildPropName="GetMedicalExaminationsRows" msprop:Generator_UserRelationName="FK_CT_Patient" msprop:Generator_RelationVarName="relationFK_CT_Patient" msprop:Generator_UserParentTable="Patients" msprop:Generator_ParentPropName="PatientsRow" />
+      <msdata:Relationship name="FK_CT_ClinicEmployee" msdata:parent="ClinicEmployee" msdata:child="MedicalExaminations" msdata:parentkey="EmployeeID" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="MedicalExaminations" msprop:Generator_ChildPropName="GetMedicalExaminationsRows" msprop:Generator_UserRelationName="FK_CT_ClinicEmployee" msprop:Generator_ParentPropName="ClinicEmployeeRow" msprop:Generator_RelationVarName="relationFK_CT_ClinicEmployee" msprop:Generator_UserParentTable="ClinicEmployee" />
+      <msdata:Relationship name="FK_E_Group" msdata:parent="UserGroups" msdata:child="ClinicEmployee" msdata:parentkey="UserGroupID" msdata:childkey="UserGroupID" msprop:Generator_UserChildTable="ClinicEmployee" msprop:Generator_ChildPropName="GetClinicEmployeeRows" msprop:Generator_UserRelationName="FK_E_Group" msprop:Generator_RelationVarName="relationFK_E_Group" msprop:Generator_UserParentTable="UserGroups" msprop:Generator_ParentPropName="UserGroupsRow" />
+      <msdata:Relationship name="FK_E_City" msdata:parent="Cities" msdata:child="ClinicEmployee" msdata:parentkey="CityID" msdata:childkey="CityID" msprop:Generator_UserChildTable="ClinicEmployee" msprop:Generator_ChildPropName="GetClinicEmployeeRows" msprop:Generator_UserRelationName="FK_E_City" msprop:Generator_ParentPropName="CitiesRow" msprop:Generator_RelationVarName="relationFK_E_City" msprop:Generator_UserParentTable="Cities" />
+      <msdata:Relationship name="FK_C_Voivodeship" msdata:parent="Voivodeships" msdata:child="Cities" msdata:parentkey="VoivodeshipID" msdata:childkey="VoivodeshipID" msprop:Generator_UserChildTable="Cities" msprop:Generator_ChildPropName="GetCitiesRows" msprop:Generator_UserRelationName="FK_C_Voivodeship" msprop:Generator_ParentPropName="VoivodeshipsRow" msprop:Generator_RelationVarName="relationFK_C_Voivodeship" msprop:Generator_UserParentTable="Voivodeships" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

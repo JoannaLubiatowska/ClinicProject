@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetClinic.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement.Designer.cs">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,13 +69,34 @@
     <Compile Include="MainClinicWindow.Designer.cs">
       <DependentUpon>MainClinicWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Medicines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medicines.Designer.cs">
+      <DependentUpon>Medicines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientManagement.Designer.cs">
+      <DependentUpon>PatientManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployeeManagement.resx">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainClinicWindow.resx">
       <DependentUpon>MainClinicWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medicines.resx">
+      <DependentUpon>Medicines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientManagement.resx">
+      <DependentUpon>PatientManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
